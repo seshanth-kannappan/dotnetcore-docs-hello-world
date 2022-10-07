@@ -2,8 +2,9 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 # Work within a folder named `/source`
 WORKDIR /source
-ENV PORT 80
 EXPOSE 80
+
+ENV ASPNETCORE_URLS=http://+:80
 
 # Copy everything in this project and build app
 COPY . ./dotnetcore-docs-hello-world/
